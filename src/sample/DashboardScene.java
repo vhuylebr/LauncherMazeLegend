@@ -5,25 +5,29 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
-import javafx.scene.control.cell.TextFieldListCell;
 import javafx.util.Callback;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.Set;
-
 public class DashboardScene {
     @FXML
     private ListView friendListView;
+    @FXML
+    private ListView chatListView;
 
-    ObservableList observableList = FXCollections.observableArrayList();
+    ObservableList friendObservableList = FXCollections.observableArrayList();
+    ObservableList chatObservableList = FXCollections.observableArrayList();
 
     @FXML public void initialize() {
         friendListView.setCellFactory((Callback<ListView, ListCell<Friend>>) param -> new FriendListViewItem());
-        friendListView.setItems(observableList);
+        friendListView.setItems(friendObservableList);
+
+        chatListView.setCellFactory((Callback<ListView, ListCell<String>>) param -> new ChatListViewItem());
+        chatListView.setItems(chatObservableList);
     }
 
     @FXML void addItem() throws JSONException {
-            observableList.add(new Friend(new JSONObject("{\"username\":\"toto\"}")));
+        friendObservableList.add(new Friend(new JSONObject("{\"username\":\"toto\"}")));
+        chatObservableList.add("toto");
     }
 }

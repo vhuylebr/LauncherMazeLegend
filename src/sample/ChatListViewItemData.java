@@ -8,14 +8,14 @@ import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 
-public class FriendListViewItemData {
+public class ChatListViewItemData {
     @FXML
     private HBox hBox;
     @FXML
-    private Label username;
+    private Label label1;
 
-    public FriendListViewItemData() {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FriendListViewItem.fxml"));
+    public ChatListViewItemData() {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("chatListViewItem.fxml"));
         fxmlLoader.setController(this);
         try
         {
@@ -26,9 +26,9 @@ public class FriendListViewItemData {
             throw new RuntimeException(e);
         }
     }
-    public void setInfo(Friend friend)
+    public void setInfo(String string)
     {
-        username.setText(friend.getUsername());
+        label1.setText(string);
     }
 
     public HBox getBox()

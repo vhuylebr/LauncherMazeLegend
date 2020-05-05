@@ -5,6 +5,6 @@
 
 <HBox xmlns:fx="http://javafx.com/fxml" fx:id="hBox">
     <children>
-        <Label  fx:id="username"/>
+        <Label  fx:id="label1"/>
     </children>
 </HBox>
