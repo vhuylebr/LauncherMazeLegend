@@ -2,6 +2,8 @@ package sample;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -29,9 +31,9 @@ public class SignupController {
         System.exit(0);
     }
 
-    @FXML void back() {
+    @FXML void back() throws IOException {
         Stage currentStage = (Stage) grid.getScene().getWindow();
-        currentStage.close();
+        currentStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("loginStage.fxml")), 900, 500));
     }
     @FXML void createAccount() throws JSONException {
         JSONObject body = new JSONObject();
@@ -50,7 +52,11 @@ public class SignupController {
                     Platform.runLater(new Runnable() {
                         @Override
                         public void run() {
-                            back();
+                            try {
+                                back();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
                         }
                     });
                 } else {

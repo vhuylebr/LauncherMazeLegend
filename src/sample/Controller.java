@@ -1,6 +1,8 @@
 package sample;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -22,8 +24,7 @@ public class Controller {
     @FXML private Label errorLabel;
     @FXML void changeStageToSignup() throws Exception {
         Stage currentStage = (Stage) usernameTextField.getScene().getWindow();
-        new SignupStage(currentStage);
-        currentStage.hide();
+        currentStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("signupstage.fxml")), 900, 500));
     }
     @FXML void exit() {
         System.exit(0);
