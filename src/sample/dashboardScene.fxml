@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.DashboardScene">
+   <children>
+      <GridPane prefHeight="500.0" prefWidth="900.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="728.0" minWidth="10.0" prefWidth="114.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="776.0" minWidth="10.0" prefWidth="706.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="445.0" minWidth="10.0" prefWidth="134.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="230.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="454.0" minHeight="10.0" prefHeight="454.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+             <ListView fx:id="chatListView" prefHeight="271.0" prefWidth="172.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <ListView fx:id="friendListView" prefHeight="271.0" prefWidth="172.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" text="Start" />
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
