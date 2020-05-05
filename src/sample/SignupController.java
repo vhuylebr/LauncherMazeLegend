@@ -47,19 +47,17 @@ public class SignupController {
             }
 
             @Override
-            public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
+            public void onResponse(@NotNull Call call, @NotNull Response response) {
                 if (response.isSuccessful()) {
-                    Platform.runLater(new Runnable() {
-                        @Override
-                        public void run() {
-                            try {
-                                back();
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
+                    Platform.runLater(() -> {
+                        try {
+                            back();
+                        } catch (IOException e) {
+                            e.printStackTrace();
                         }
                     });
                 } else {
+                    System.out.println(response);
                     errorLabel.setVisible(true);
                 }
             }

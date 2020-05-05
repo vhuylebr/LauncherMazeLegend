@@ -1,5 +1,6 @@
 package sample;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -22,15 +23,21 @@ public class Controller {
     @FXML private TextField usernameTextField;
     @FXML private PasswordField passwordField;
     @FXML private Label errorLabel;
+
+    @FXML public void initialize() {
+
+    }
+
     @FXML void changeStageToSignup() throws Exception {
         Stage currentStage = (Stage) usernameTextField.getScene().getWindow();
         currentStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("signupstage.fxml")), 900, 500));
     }
+
     @FXML void exit() {
         System.exit(0);
     }
     @FXML
-    void onClickConnexion() throws IOException, JSONException {
+    void onClickConnexion() throws JSONException {
         String username = usernameTextField.getText();
         String password = passwordField.getText();
         Api.getInstance().login(username, password, new Callback() {
@@ -43,12 +50,16 @@ public class Controller {
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 if (response.isSuccessful()) {
-                    System.out.println("Connected");
+                    Stage currentStage = (Stage) usernameTextField.getScene().getWindow();
+                    Scene dashboardScene = new Scene(FXMLLoader.load(getClass().getResource("dashboardScene.fxml")), 900, 500);
+                    Platform.runLater(() -> {
+                        currentStage.setScene(dashboardScene);
+                    });
                 } else {
+                    System.out.println(response);
                     errorLabel.setVisible(true);
                 }
             }
         });
-        errorLabel.setVisible(true);
     }
 }
