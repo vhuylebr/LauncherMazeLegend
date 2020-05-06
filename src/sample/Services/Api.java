@@ -6,7 +6,7 @@ import org.json.JSONObject;
 
 public class Api extends OkHttpClient {
     static private Api instance = new Api();
-    private String URL = "http://localhost:3000";
+    private String URL = "http://mazelegends-api.herokuapp.com";
 
     Api() { super(); }
 

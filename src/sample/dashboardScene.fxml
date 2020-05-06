@@ -18,7 +18,7 @@
          <children>
              <ListView fx:id="chatListView" prefHeight="271.0" prefWidth="172.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <ListView fx:id="friendListView" prefHeight="411.0" prefWidth="116.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" onAction="#addItem" text="Start" GridPane.halignment="CENTER" />
+            <Button mnemonicParsing="false" onAction="#start" text="Start" GridPane.halignment="CENTER" />
          </children>
       </GridPane>
    </children>

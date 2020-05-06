@@ -57,7 +57,6 @@ public class SignupController {
                         }
                     });
                 } else {
-                    System.out.println(response);
                     errorLabel.setVisible(true);
                 }
             }

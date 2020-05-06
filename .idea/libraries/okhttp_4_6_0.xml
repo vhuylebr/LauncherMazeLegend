@@ -1,15 +1,16 @@
 <component name="libraryTable">
   <library name="okhttp-4.6.0">
     <CLASSES>
-      <root url="jar://$USER_HOME$/Downloads/okhttp-4.6.0.jar!/" />
       <root url="file://$USER_HOME$/Downloads/java-json.jar" />
       <root url="file://$USER_HOME$/Downloads/jar_files" />
+      <root url="file://$USER_HOME$/Downloads/jar_files (1)" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
       <root url="file://$USER_HOME$/Downloads/java-json.jar" />
     </SOURCES>
     <jarDirectory url="file://$USER_HOME$/Downloads/jar_files" recursive="false" />
+    <jarDirectory url="file://$USER_HOME$/Downloads/jar_files (1)" recursive="false" />
     <jarDirectory url="file://$USER_HOME$/Downloads/java-json.jar" recursive="false" />
     <jarDirectory url="file://$USER_HOME$/Downloads/java-json.jar" recursive="false" type="SOURCES" />
   </library>
